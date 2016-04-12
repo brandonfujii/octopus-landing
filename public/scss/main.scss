@@ -29,6 +29,7 @@ $mainfont: 'Avenir', 'Open Sans', 'Lato', sans-serif;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     cursor: hand;
+    outline: none;
 
     &:hover {
     	box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
@@ -164,6 +165,76 @@ body {
 		        margin: 0 auto;
 		        padding-top: 45px;
 			}
+		}
+	}
+
+	#signup {
+		background-color: #4D6DC3;
+		border-top: 1px solid #f2f2f2;
+		padding-top: 60px;
+		padding-bottom: 60px;
+
+		#mc_embed_signup {
+			form {
+
+				text-align: center;
+				label {
+					@include font($mainfont, 700, 2em, #fff);
+					display: block;
+				}
+				#mce-EMAIL {
+					@include font($mainfont, 500, 1em, #555459);
+					height: 50px;
+					width: 90%;
+					max-width: 350px;
+					border-radius: 6px;
+					border: 0;
+					padding: 1rem;
+    				padding-left: 2.5rem;
+    				box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    				transition: box-shadow 70ms ease-out,border-color 70ms ease-out;
+    				outline: none;
+    				margin: 20px auto;
+
+					:focus {
+						outline: none;
+						text-decoration: none;
+						box-shadow: 0 5px 12px rgba(0,0,0,.2);
+					}
+
+				}
+				.button {
+					@include button(#D2527F);
+					height: 40px;
+				}
+			}
+		}
+	}
+
+	footer {
+		background-color: darken(#4D6DC3, 10%);
+		padding-top: 30px;
+		padding-bottom: 30px;
+		.container {
+			max-width: 900px;
+			
+			.creator {
+				li {
+					float: left;
+					@include font($mainfont, 700, 1em, #4D6DC3);
+				}
+			}
+			.contact {
+				li {
+
+					float: right;
+
+					a {
+						@include font($mainfont, 700, 1em, #fff);
+					}
+				}
+			}
+
 		}
 	}
 }
