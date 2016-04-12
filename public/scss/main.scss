@@ -146,7 +146,8 @@ body {
 
 			.img-canvas {
 				margin: 0 auto;
-				width: 500px;
+				max-width: 500px;
+				width: 90%;
 				height: auto;
 				overflow: hidden;
 				border-radius: 3px;
@@ -159,9 +160,29 @@ body {
 
 			.markdown-body {
 				max-width: 500px;
+				width: 90%;
 		        margin: 0 auto;
 		        padding-top: 45px;
 			}
 		}
 	}
 }
+
+@media screen and (max-width: 400px) {
+	body {
+		#splash {
+			.wrapper {
+				h1 {
+					font-size: 2.5em;
+				}
+
+				h3 {
+					font-size: 1.5em;
+					padding: 10px;
+					line-height: 1.25em;
+				}
+			}
+		}
+	}
+}
+
