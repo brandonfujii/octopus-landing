@@ -1,4 +1,25 @@
 extends layout
 
 block content
-	h1 hello, world
+	div#splash
+		.wrapper
+			h1 Octopus
+			h3 A Slack bot that helps you manage tasks
+			a.primary-action Get Started
+
+	div#body-wrapper
+		.inner-wrapper
+			.img-canvas
+				img(src='img/slack2.gif' loop='infinite')
+			article.markdown-body
+				h2 Adding a task
+				pre(lang='no-highlight')
+					code @slacktopus add (your_task)
+				h2 Viewing your tasks
+				pre(lang='no-highlight')
+					code @slacktopus show tasks
+				h2 Removing and completing tasks
+				pre(lang='no-highlight')
+					code @slacktopus remove (task_id)
+				pre(lang='no-highlight')
+					code @slacktopus complete (task_id)

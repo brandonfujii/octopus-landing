@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic);
+ol, ul {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h6, p {
+  margin: 0;
+  padding: 0; }
+
+a:hover {
+  text-decoration: none; }
+
+body {
+  font-family: "Avenir", "Open Sans", "Lato", sans-serif;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #555459;
+  line-height: 1.5rem; }
+  body nav {
+    position: absolute;
+    z-index: 100;
+    width: 100%; }
+    body nav .nav-container {
+      padding: 20px; }
+      body nav .nav-container ul {
+        float: right; }
+        body nav .nav-container ul li {
+          display: inline-block;
+          margin-right: 20px; }
+          body nav .nav-container ul li a {
+            font-family: "Avenir", "Open Sans", "Lato", sans-serif;
+            font-weight: 700;
+            font-size: 1em;
+            color: #fff;
+            padding-bottom: 5px; }
+            body nav .nav-container ul li a:hover {
+              border-bottom: 2px solid #fff; }
+        body nav .nav-container ul li.action-button a {
+          font-family: "Avenir", "Open Sans", "Lato", sans-serif;
+          font-weight: 700;
+          font-size: 1.25rem;
+          color: #fff;
+          display: inline-block;
+          margin-left: 9px;
+          position: relative;
+          cursor: pointer;
+          line-height: 1em;
+          padding: 8px 7px 9px;
+          border-radius: 5px;
+          border: 2px solid #fff; }
+          body nav .nav-container ul li.action-button a:hover {
+            background-color: rgba(0, 0, 0, 0.1); }
+  body #splash {
+    background-color: #4D6DC3;
+    background-size: 64pc 385px;
+    min-height: 25pc;
+    position: relative;
+    text-align: center;
+    z-index: 1; }
+    body #splash .wrapper {
+      padding-top: 120px;
+      height: 100%;
+      max-width: 921px;
+      margin: 0 auto; }
+      body #splash .wrapper h1 {
+        font-family: "Avenir", "Open Sans", "Lato", sans-serif;
+        font-weight: 700;
+        font-size: 3em;
+        color: #fff;
+        padding-bottom: 8px; }
+      body #splash .wrapper h3 {
+        font-family: "Avenir", "Open Sans", "Lato", sans-serif;
+        font-weight: 500;
+        font-size: 2em;
+        color: #fff;
+        padding-bottom: 30px; }
+      body #splash .wrapper .primary-action {
+        -webkit-transition: ease-in-out 0.3s;
+        -moz-transition: ease-in-out 0.3s;
+        -o-transition: ease-in-out 0.3s;
+        transition: ease-in-out 0.3s;
+        background-color: #D2527F;
+        color: #fff;
+        font-size: 1.1em;
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-weight: 700;
+        border-radius: 3px;
+        border: none;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        cursor: hand; }
+        body #splash .wrapper .primary-action:hover {
+          box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3); }
+  body #body-wrapper {
+    background-color: #F9F9F9; }
+    body #body-wrapper .inner-wrapper {
+      margin: 0 auto;
+      max-width: 921px;
+      padding-top: 50px;
+      padding-bottom: 50px; }
+      body #body-wrapper .inner-wrapper .img-canvas {
+        margin: 0 auto;
+        width: 500px;
+        height: auto;
+        overflow: hidden;
+        border-radius: 3px; }
+        body #body-wrapper .inner-wrapper .img-canvas img {
+          width: 100%;
+          height: auto; }
+      body #body-wrapper .inner-wrapper .markdown-body {
+        max-width: 500px;
+        margin: 0 auto;
+        padding-top: 45px; }

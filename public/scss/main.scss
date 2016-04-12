@@ -1,0 +1,167 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic);
+
+$mainfont: 'Avenir', 'Open Sans', 'Lato', sans-serif;
+
+@mixin font($type: $mainfont, $weight: 400, $size: 1em, $color: #555459) {
+	font-family: $type;
+	font-weight: $weight;
+	font-size: $size;
+	color: $color;
+}
+
+@mixin transition() {
+	-webkit-transition: ease-in-out 0.3s;
+	-moz-transition: ease-in-out 0.3s;
+	-o-transition: ease-in-out 0.3s;
+	transition: ease-in-out 0.3s;
+}
+@mixin button($backgroundColor: #7ED321, $color: #fff, $fontsize: 1.25em) {
+	@include transition();
+	background-color: $backgroundColor;
+	color: $color;
+	font-size: $fontsize;
+	display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    cursor: hand;
+
+    &:hover {
+    	box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+ol, ul {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h6, p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+body {
+
+	font-family: $mainfont;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #555459;
+    line-height: 1.5rem;
+
+
+	nav {
+		position: absolute;
+		z-index: 100;
+		width: 100%;
+		.nav-container {
+			padding: 20px;
+
+			ul {
+				float: right;
+				li {
+					display: inline-block;
+					margin-right: 20px;
+
+					a {
+
+						@include font($mainfont, 700, 1em, #fff);
+						padding-bottom: 5px;
+
+						&:hover {
+							border-bottom: 2px solid #fff;
+						}
+					}
+				}
+
+				li.action-button {
+    				a {
+    					@include font($mainfont, 700, 1.25rem, #fff);
+					    display: inline-block;
+					    margin-left: 9px;
+					    position: relative;
+					    cursor: pointer;
+					    line-height: 1em;
+					    padding: 8px 7px 9px;
+					    border-radius: 5px;
+					    border: 2px solid #fff;
+
+					    &:hover {
+							background-color: rgba(0,0,0,0.1);
+					    }
+    				}
+				}
+			}
+		}
+	}
+
+	#splash {
+		background-color: #4D6DC3;
+	    background-size: 64pc 385px;
+	    min-height: 25pc;
+	    position: relative;
+	    text-align: center;
+	    z-index: 1;
+
+	    .wrapper {
+	    	padding-top: 120px;
+	    	height: 100%;
+	    	max-width: 921px;
+	    	margin: 0 auto;
+			
+			h1 {
+				@include font($mainfont, 700, 3em, #fff);
+				padding-bottom: 8px;
+			}
+			h3 {
+				@include font($mainfont, 500, 2em, #fff);
+				padding-bottom: 30px;
+			}
+	    	.primary-action {
+	    		@include button(#D2527F, #fff, 1.1em);
+	    	}
+	    }
+	}
+
+	#body-wrapper {
+		background-color: #F9F9F9;
+
+		.inner-wrapper {
+			margin: 0 auto;
+			max-width: 921px;
+			padding-top: 50px;
+			padding-bottom: 50px;
+
+			.img-canvas {
+				margin: 0 auto;
+				width: 500px;
+				height: auto;
+				overflow: hidden;
+				border-radius: 3px;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.markdown-body {
+				max-width: 500px;
+		        margin: 0 auto;
+		        padding-top: 45px;
+			}
+		}
+	}
+}
