@@ -23,6 +23,7 @@
     "path": "^0.12.7"
   },
   "dependencies": {
+    "express": "^4.13.4",
     "github-markdown-css": "^2.2.1",
     "jade": "^1.11.0",
     "serve-favicon": "^2.3.0"
