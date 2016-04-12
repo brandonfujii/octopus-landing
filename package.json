@@ -1,0 +1,29 @@
+{
+  "name": "octopus-landing",
+  "version": "1.0.0",
+  "description": "A landing page for Octopus",
+  "main": "app.js",
+  "scripts": {
+  	"start" : "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies" : {
+  	"body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.2",
+    "jshint": "^2.9.1-rc2",
+    "path": "^0.12.7"
+  },
+  "dependencies" : {
+  	"jade": "^1.11.0",
+    "serve-favicon": "^2.3.0"
+  }
+}
