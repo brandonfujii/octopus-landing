@@ -6,5 +6,4 @@ $navItem.on('click', function() {
 	console.log(jump_to);
 
 	$(jump_to).velocity("scroll", { duration: 600 });
-
 });

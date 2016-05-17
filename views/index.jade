@@ -2,27 +2,118 @@ extends layout
 
 block content
 	div#splash
-		.wrapper
-			h1 Octopus
-			h3 A Slack bot that helps you manage tasks
-			a(data-nav='body-wrapper').primary-action#nav-link Get Started
-
+		#fg
+			.overlay
+				.wrapper
+					h1 Octopus is a Slack bot that makes managing tasks easier
+					a(data-nav='body-wrapper').primary-action#nav-link How it works
+					a(href="https://slack.com/oauth/authorize?scope=bot&client_id=2760808644.41512344070").slack-button
+						img(alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x")
+			.bg
+		
 	div#body-wrapper
+		#slack-container
+			#sidebar
+				#team-picker
+					ul.teams
+						li.team
+							li.team
+				#team-name
+					h1 Team Awesome
+				#username
+					.status 
+					h2  brandonfujii
+				ul#channels
+					h4 channels
+					li.channel.selected
+						p 
+							i # 
+							| general
+					li.channel.unread
+						p 
+							i # 
+							| marketing
+					li.channel
+						p 
+							i # 
+							| tech
+					li.channel
+						p 
+							i # 
+							| branding
+					li.channel
+						p 
+							i # 
+							| exec
+				ul#direct-messages
+					h4 Direct Messages
+					li.direct-message
+						.status 
+						p slackbot
+					li.direct-message
+						.status 
+						p navin
+					li.direct-message
+						.status 
+						p edys
+					li.direct-message
+						.status 
+						p kimberlygo
+					li.direct-message
+						.status.inactive
+						p alexandra
+					li.direct-message
+						.status
+						p slacktopus
+			#chat
+				.header-bar
+					h1 #general
+					.details
+						h3.members 5 members
+						h3.purpose Sometimes we do cool stuff
+				#chatbox
+					
+				#input-bar
 		.inner-wrapper
-			.img-canvas
-				img(src='img/slack2.gif' loop='infinite')
-			article.markdown-body
-				h2 Adding a task
-				pre(lang='no-highlight')
-					code @slacktopus add (your_task)
-				h2 Viewing your tasks
-				pre(lang='no-highlight')
-					code @slacktopus show tasks
-				h2 Removing and completing tasks
-				pre(lang='no-highlight')
-					code @slacktopus remove (task_id)
-				pre(lang='no-highlight')
-					code @slacktopus complete (task_id)
+			.command-body
+				.command
+					h4 Adding a task
+					p 
+						b @slacktopus: 
+						| add (
+						i this is your task
+						| )
+				.command
+					h4 Removing a task
+					p 
+						b @slacktopus: 
+						| remove (
+						i this is a task id
+						| )
+				.command
+					h4 Claiming a task
+					p 
+						b @slacktopus: 
+						| claim (
+						i this is a task id
+						| )
+				.command
+					h4 Assigning a task
+					p 
+						b @slacktopus: 
+						| assign (
+						i this is a task id
+						| ) to @username
+				.command
+					h4 Asking for help
+					p 
+						b @slacktopus: 
+						| help
+				.command
+					h4 Clear your team's tasks
+					p 
+						b @slacktopus: 
+						| clear
 	div#signup
 		#mc_embed_signup
 			form#mc-embedded-subscribe-form.validate(action='//herokuapp.us13.list-manage.com/subscribe/post?u=e798417f38820a94a04c1a740&id=fb033dd64a', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate='')

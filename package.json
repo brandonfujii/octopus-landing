@@ -20,11 +20,12 @@
     "jshint": "^2.9.1-rc2"
   },
   "dependencies": {
-    "path": "^0.12.7",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
+    "fs": "0.0.2",
     "github-markdown-css": "^2.2.1",
     "jade": "^1.11.0",
+    "path": "^0.12.7",
     "serve-favicon": "^2.3.0"
   }
 }

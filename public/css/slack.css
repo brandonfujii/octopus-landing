@@ -1,0 +1,217 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic);
+h1, h2, h3, h4, h6 {
+  margin: 0; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+.clearfix:after {
+  display: table;
+  content: "";
+  clear: both; }
+
+body #slack-container {
+  position: absolute;
+  top: 375px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  font-family: "Lato", Helvetica, sans-serif;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  height: 500px;
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden; }
+  body #slack-container #sidebar {
+    float: left;
+    color: #fff;
+    display: inline-block;
+    height: 100%;
+    float: left;
+    width: 30%;
+    background: #4E394C; }
+    body #slack-container #sidebar #team-picker {
+      margin-right: 15px;
+      float: left;
+      display: inline-block;
+      height: 100%;
+      width: 70px;
+      background: #3f2e3e; }
+      body #slack-container #sidebar #team-picker .teams {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        padding-top: 25px; }
+        body #slack-container #sidebar #team-picker .teams .team {
+          list-style: none;
+          width: 32px;
+          height: 32px;
+          background: #fff;
+          margin: 0 auto;
+          margin-bottom: 25px;
+          border-radius: 5px;
+          overflow: hidden; }
+    body #slack-container #sidebar #team-name {
+      display: inline-block; }
+      body #slack-container #sidebar #team-name h1 {
+        font-size: 16px;
+        margin: 0;
+        margin-top: 10px; }
+    body #slack-container #sidebar #username {
+      display: block; }
+      body #slack-container #sidebar #username .status {
+        margin-right: 3px;
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 10px;
+        background-color: #4C9689; }
+      body #slack-container #sidebar #username h2 {
+        display: inline-block;
+        opacity: 0.5;
+        font-size: 14px;
+        font-weight: 300;
+        margin: 0; }
+    body #slack-container #sidebar #channels {
+      display: block;
+      padding-top: 25px; }
+      body #slack-container #sidebar #channels h4 {
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+        opacity: 0.5; }
+      body #slack-container #sidebar #channels .channel {
+        padding-left: 10px;
+        display: block;
+        font-weight: 300; }
+        body #slack-container #sidebar #channels .channel p {
+          font-size: 13px;
+          margin: 0;
+          padding-top: 2.5px;
+          padding-bottom: 2.5px;
+          opacity: 0.5; }
+          body #slack-container #sidebar #channels .channel p i {
+            font-style: normal;
+            opacity: 0.45; }
+      body #slack-container #sidebar #channels .channel.unread {
+        font-weight: 700; }
+        body #slack-container #sidebar #channels .channel.unread p {
+          opacity: 1; }
+          body #slack-container #sidebar #channels .channel.unread p i {
+            font-weight: 300; }
+      body #slack-container #sidebar #channels .channel.selected {
+        width: 95%;
+        border-radius: 3px;
+        background: #4C9689;
+        padding-bottom: 3px; }
+        body #slack-container #sidebar #channels .channel.selected p {
+          opacity: 1; }
+    body #slack-container #sidebar #direct-messages {
+      display: block;
+      padding-top: 40px; }
+      body #slack-container #sidebar #direct-messages h4 {
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+        opacity: 0.5; }
+      body #slack-container #sidebar #direct-messages .direct-message {
+        padding-left: 10px;
+        display: block;
+        font-weight: 300; }
+        body #slack-container #sidebar #direct-messages .direct-message .status {
+          margin-right: 3px;
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 10px;
+          background-color: #4C9689; }
+        body #slack-container #sidebar #direct-messages .direct-message .status.inactive {
+          background: transparent;
+          width: 6px;
+          height: 6px;
+          border: 1px solid #fff;
+          opacity: 0.5; }
+        body #slack-container #sidebar #direct-messages .direct-message p {
+          display: inline-block;
+          font-size: 13px;
+          margin: 0;
+          padding-top: 2.5px;
+          padding-bottom: 2.5px;
+          opacity: 0.5; }
+  body #slack-container #chat {
+    background: #fff;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    float: left;
+    display: inline-block; }
+    body #slack-container #chat .header-bar {
+      padding: 10px;
+      width: 100%;
+      border-bottom: 1px solid #ddd; }
+      body #slack-container #chat .header-bar h1 {
+        font-size: 16px;
+        margin-bottom: 0; }
+      body #slack-container #chat .header-bar h3 {
+        font-weight: 400;
+        display: inline-block;
+        font-size: 12px;
+        opacity: 0.3;
+        padding-right: 7px;
+        margin-top: 0; }
+      body #slack-container #chat .header-bar .purpose {
+        border-left: 1px solid #ccc;
+        padding-left: 7px; }
+    body #slack-container #chat #chatbox {
+      width: 100%; }
+      body #slack-container #chat #chatbox .MessageSection .MessageList {
+        width: 100%; }
+        body #slack-container #chat #chatbox .MessageSection .MessageList .message {
+          padding: 10px 10px 10px 20px;
+          display: block;
+          font-size: 14px; }
+          body #slack-container #chat #chatbox .MessageSection .MessageList .message .user-icon {
+            position: relative;
+            top: 4px;
+            margin-right: 7px;
+            width: 35px;
+            height: 35px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #4E394C;
+            display: inline-block; }
+            body #slack-container #chat #chatbox .MessageSection .MessageList .message .user-icon img {
+              width: 550%;
+              height: auto; }
+          body #slack-container #chat #chatbox .MessageSection .MessageList .message .body {
+            display: inline-block; }
+            body #slack-container #chat #chatbox .MessageSection .MessageList .message .body .username {
+              font-weight: 700; }
+            body #slack-container #chat #chatbox .MessageSection .MessageList .message .body .text {
+              font-size: 13px;
+              color: #252525; }
+    body #slack-container #chat #input-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      padding: 3%; }
+      body #slack-container #chat #input-bar form input {
+        margin: 0 auto;
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid #dedede;
+        height: 35px;
+        width: 100%;
+        padding: 5px;
+        font-size: 13px; }
