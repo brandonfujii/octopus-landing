@@ -65,12 +65,17 @@ body {
 	          list-style: none;
 	          width: 32px;
 	          height: 32px;
-	          background: #fff;
+	          background: rgba(255, 158, 223, 0.5);
+
 	          margin: 0 auto;
 	          margin-bottom: 25px;
 	          border-radius: 5px;
 	          overflow: hidden;
 	          
+	        }
+
+	        .team.active {
+				background: #fff;
 	        }
 	      }
 	    }
@@ -88,6 +93,7 @@ body {
 	    }
 	    
 	    #username {
+	      margin-top: 3px;
 	      display: block;
 	      .status {
 	      	margin-right: 3px;
@@ -102,7 +108,7 @@ body {
 	        display: inline-block;
 	        opacity: 0.5;
 	        font-size: 14px;
-	        font-weight: 300;
+	        font-weight: 400;
 	        margin: 0;
 	      }
 	    }
@@ -123,7 +129,7 @@ body {
 	      .channel {
 	        padding-left: 10px;
 	        display: block;
-	        font-weight: 300;
+	        font-weight: 400;
 	        
 	        
 	        p {
@@ -181,7 +187,7 @@ body {
 	      .direct-message {
 	        padding-left: 10px;
 	        display: block;
-	        font-weight: 300;
+	        font-weight: 400;
 	        .status {
 	          margin-right: 3px;
 	          display: inline-block;
@@ -192,8 +198,8 @@ body {
 	        }
 	        .status.inactive {
 	          background: transparent;
-	          width: 6px;
-	          height: 6px;
+	          width: 8px;
+	          height: 8px;
 	          border: 1px solid #fff;
 	          opacity: 0.5;
 	        }
@@ -244,6 +250,8 @@ body {
 	      .MessageSection {
 	      
 		      .MessageList {
+		      	height: 400px;
+		      	overflow: scroll;
 		        width: 100%;
 		        .message {
 		          padding: 10px 10px 10px 20px;
@@ -275,38 +283,49 @@ body {
 		            }
 		            
 		            .text {
+		              margin-top: 3px;
 		              font-size: 13px;
 		              color: #252525;
 		            }
 		            
 		          }
 		        }
+
+		        .message:nth-child(2), .message:nth-child(4) {
+		        	.user-icon {
+		        		background: #fff;
+		        		img {
+		        			width: 100%;
+
+		        		}
+		        	}
+		        }
 		      }
+
+		      #input-bar {
+	      
+		      position: absolute;
+		      bottom: 0;
+		      left: 0;
+		      right: 0;
+		      width: 100%;
+		      padding: 3%;
+		      
+		      form {
+		        input {
+		          margin: 0 auto;
+		          outline: none;
+		          border-radius: 5px;
+		          border: 2px solid #dedede;
+		          height: 35px;
+		          width: 100%;
+		          padding: 5px;
+		          font-size: 13px;
+		        }
+		      }
+		    }
 		  }
-	    }
-	    
-	    #input-bar {
-	      
-	      position: absolute;
-	      bottom: 0;
-	      left: 0;
-	      right: 0;
-	      width: 100%;
-	      padding: 3%;
-	      
-	      form {
-	        input {
-	          margin: 0 auto;
-	          outline: none;
-	          border-radius: 5px;
-	          border: 2px solid #dedede;
-	          height: 35px;
-	          width: 100%;
-	          padding: 5px;
-	          font-size: 13px;
-	        }
-	      }
-	    }
+	    } 
 	  }
 	}
 }

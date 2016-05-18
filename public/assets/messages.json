@@ -1,22 +1,26 @@
 [
     {
-    	"id": "12412122451",
-        "username" : "edys",
-        "body" : "@slacktopus: add (finish business model canvas)"
+        "id": "12412122451",
+        "username": "edys",
+        "body": "@slacktopus: add (finish business model canvas)",
+        "icon": "http://socialmediaweek.org/wp-content/blogs.dir/1/files/slack-pattern-940x492.jpg"
     },
     {
-        "id" : "12124124123",
-        "username" : "slacktopus",
-        "body" : "Nice! You've added \"finish business model canvas\" with the task ID, alpha1."
+        "id": "12124124123",
+        "username": "slacktopus",
+        "body": "Nice! You've added \"finish business model canvas\" with the task ID, alpha1.",
+        "icon": "img/octopus_logo_app.png"
     },
     {
-    	"id" : "1212412412",
-        "username" : "navin",
-        "body" : "@slacktopus: claim (alpha1) please"
+        "id": "1212412412",
+        "username": "navin",
+        "body": "@slacktopus: claim (alpha1) please",
+        "icon": "http://socialmediaweek.org/wp-content/blogs.dir/1/files/slack-pattern-940x492.jpg"
     },
     {
-        "id" : "12124124124",
-        "username" : "slacktopus",
-        "body" : "navin has claimed task alpha1!"
+        "id": "12124124124",
+        "username": "slacktopus",
+        "body": "navin has claimed task alpha1!",
+        "icon": "img/octopus_logo_app.png"
     }
 ]

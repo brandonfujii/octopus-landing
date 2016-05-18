@@ -44,13 +44,14 @@ APIRouter.post('/', function(req, res, next) {
 
     var newMessage = {
       id: Date.now(),
-      username: req.body.username,
-      text: req.body.body
+      username: 'yours_truly',
+      body: req.body.body,
+      icon: "http://socialmediaweek.org/wp-content/blogs.dir/1/files/slack-pattern-940x492.jpg"
     };
 
     messages.push(newMessage);
 
-    fs.writeFile(MESSAGES_LIST, JSON.stringify(events, null, 4), function(err) {
+    fs.writeFile(MESSAGES_LIST, JSON.stringify(messages, null, 4), function(err) {
       if (err) {
         console.error(err);
         process.exit(1);

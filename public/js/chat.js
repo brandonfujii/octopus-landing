@@ -7,7 +7,7 @@ var Message = React.createClass({
 	    return(
 	    	<div className="message" key={this.props.key}>
 	    		<div className="user-icon">
-	    			<img src="http://socialmediaweek.org/wp-content/blogs.dir/1/files/slack-pattern-940x492.jpg" />
+	    			<img src={this.props.icon} />
 	    		</div>
 	    		<div className="body">
 	    			<div className="username">{this.props.username}</div>
@@ -23,7 +23,7 @@ var MessageList = React.createClass({
     	var messageNodes = this.props.data.map(function(message) {
  
         	return (
-           		<Message key={message.id} username={message.username} body={message.body} ></ Message>
+           		<Message key={message.id} username={message.username} body={message.body} icon={message.icon}></ Message>
 	        	);
 	   }.bind(this));
 
@@ -34,6 +34,34 @@ var MessageList = React.createClass({
 	   );
 	}
 });
+
+var MessageForm = React.createClass({
+	getInitialState: function() {
+		return { body: '' };
+	},
+	handleInputChange: function(e) {
+		this.setState({body: e.target.value});
+	},
+	handleSubmit: function(e) {
+		e.preventDefault();
+		var msg_body = this.state.body.trim();
+		if (!msg_body) {
+			return;
+		}
+		this.props.onMessageSubmit({ body: msg_body });
+		this.setState({ body: '' });
+	},
+	render: function() {
+		return (
+			<div id="input-bar">
+				<form onSubmit={this.handleSubmit}>
+					<input type="text" onChange={this.handleInputChange} value={ this.state.body } />
+				</form>
+			</div>
+		);
+	}
+});
+
 
 var MessageSection = React.createClass({
 	loadMessages: function() {
@@ -48,50 +76,6 @@ var MessageSection = React.createClass({
 	        console.error(this.props.url, status, err.toString());
 	      }.bind(this)
 	    });
-	},
-	componentDidMount: function() {
-		this.loadMessages();
-	},
-	getInitialState: function() {
-		return { data: [] }
-	},
-	render: function() {
-		return (
-			<div className="MessageSection">
-				<MessageList data={this.state.data} />
-			</div>
-		)
-	}
-});
-
-var MessageForm = React.createClass({
-	getInitialState: function() {
-		return { body: '' };
-	},
-	handleInputChange: function(e) {
-		this.setState({body: e.target.value});
-	},
-	handleSubmit: function() {
-		e.preventDefault();
-		var msg_body = this.state.body.trim();
-		if (!msg_body) {
-			return;
-		}
-		this.props.handleMessageSubmit({ body: body });
-		this.setState({ body: '' });
-	},
-	render: function() {
-		return (
-			<form onSubmit={this.handleSubmit}>
-				<input type="text" onChange={this.handleInputChange} />
-			</form>
-		);
-	}
-})
-
-var MessageFormContainer = React.createClass({
-	getInitialState: function() {
-		return { data: [] };
 	},
 	handleMessageSubmit: function(message) {
 		 var messages = this.state.data;
@@ -111,19 +95,25 @@ var MessageFormContainer = React.createClass({
 	      }.bind(this)
 	    });
 	},
+	componentDidMount: function() {
+		this.loadMessages();
+		setInterval(this.loadMessages, 500);
+	},
+	getInitialState: function() {
+		return { data: [] }
+	},
 	render: function() {
 		return (
-			<MessageForm data={this.props.url} />
-		);
+			<div className="MessageSection">
+				<MessageList data={this.state.data} />
+				<MessageForm onMessageSubmit={this.handleMessageSubmit} />
+			</div>
+		)
 	}
-})
+});
+
 
 ReactDOM.render(
   <MessageSection url='/api/messages'/>,
   document.getElementById('chatbox')
-);
-
-ReactDOM.render(
-	<MessageFormContainer url='/api/messages' />,
-	document.getElementById('input-bar')
 );
