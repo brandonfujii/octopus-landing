@@ -258,24 +258,29 @@ body {
 		          display: block;
 		          font-size: 14px;
 		          
-		          .user-icon {
-		            position: relative;
-		            top: 4px;
-		            margin-right: 7px;
-		            width: 35px;
-		            height: 35px;
-		            border-radius: 4px;
-		            overflow: hidden;
-		            background: $SlackPurple;
-		            display: inline-block;
-		            
-		            img {
-		              width: 550%;
-		              height: auto;
-		            }
-		          }
+		          .user-icon-container {
+
+		          	  position: relative;
+			          display: inline-block;
+		          	  height: 100%;
+			          .user-icon {
+			            margin-right: 7px;
+			            width: 35px;
+			            height: 35px;
+			            border-radius: 4px;
+			            overflow: hidden;
+			            background: $SlackPurple;
+			            display: inline-block;
+			            
+			            img {
+			              width: 550%;
+			              height: auto;
+			            }
+			          }
+			      }
 		          
 		          .body {
+		          	max-width: 80%;
 		            display: inline-block; 
 		          
 		            .username {
@@ -290,15 +295,16 @@ body {
 		            
 		          }
 		        }
-
 		        .message:nth-child(2), .message:nth-child(4) {
-		        	.user-icon {
-		        		background: #fff;
-		        		img {
-		        			width: 100%;
+		        	.user-icon-container {
+			        	.user-icon {
+			        		background: #fff;
+			        		img {
+			        			width: 100%;
 
-		        		}
-		        	}
+			        		}
+			        	}
+			        }
 		        }
 		      }
 
@@ -327,5 +333,207 @@ body {
 		  }
 	    } 
 	  }
+	}
+}
+
+@media screen and (max-width: 850px) {
+	body {
+		#slack-container {
+			width: 600px;
+			height: 400px;
+
+			#sidebar {
+				#team-picker {
+					width: 40px;
+
+					.teams {
+						.team {
+							width: 20px;
+							height: 20px;
+							margin-bottom: 10px;
+						}
+					}
+				}
+
+				#team-name {
+
+					h1 {
+						font-size: 13px;
+					}
+				}
+
+				#username {
+					.status {
+						width: 5px;
+						height: 5px;
+
+					}
+
+					h2 {
+						font-size: 10px;
+					}
+				}
+
+				#channels {
+					h4 {
+						font-size: 10px;
+					}
+
+					.channel {
+						p {
+							font-size: 10px;
+						}
+					}
+				}
+
+				#direct-messages {
+					h4 {
+						font-size: 10px;
+					}
+					.direct-message {
+						.status {
+							width: 5px;
+							height: 5px;
+						}
+						p {
+							font-size: 10px;
+						}
+					}	
+				}
+			}
+
+			#chat {
+				.header-bar {
+					h1 {
+						font-size: 13px;
+					}
+
+					h3 {
+						font-size: 10px;
+					}
+				}
+
+				#chatbox {
+					.MessageSection {
+						.MessageList {
+							.message {
+								padding: 5px 10px;
+								font-size: 10px;
+								
+								.user-icon-container {
+									.user-icon {
+										width: 25px;
+										height: 25px;
+									}
+								}
+
+								.body {
+									.text {
+										margin-top: 0;
+										font-size: 10px;
+
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 621px) {
+	body {
+		#slack-container {
+			width: 400px;
+			height: 300px;
+
+			#sidebar {
+				.teams {
+					display: none;
+				}
+
+
+			}
+
+			#chat {
+				.header-bar {
+					.details {
+						display: none;
+					}
+				}
+
+				#chatbox {
+					.MessageSection {
+						.MessageList {
+							.message {
+								.user-icon-container {
+									.user-icon {
+										display: inline-block;
+										height: 100%;
+										width: 20px;
+										height: 20px;
+									}
+								}
+
+								.body {
+									display: inline-block;
+									line-height: 1em;
+									.username {
+										font-size: 8px;
+										padding: 0;
+									}
+									.text {
+										padding: 0;
+										font-size: 8px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 515px) {
+	body {
+		#body-wrapper {
+			.inner-wrapper {
+				.command-body {
+					.command {
+						h4 {
+							font-size: 1.2em;
+						}
+
+						p {
+							font-size: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 440px) {
+	body {
+		#slack-container {
+			top: 325px;
+			width: 80%;
+			height: 250px;
+
+			#chat {
+				#chatbox {
+					.MessageSection {
+						#input-bar {
+							display: none;
+						}
+					}
+				}
+			}
+		}
 	}
 }

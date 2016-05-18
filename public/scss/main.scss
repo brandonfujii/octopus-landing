@@ -168,25 +168,28 @@ body {
 						padding-bottom: 30px;
 					}
 
-			    	.primary-action {
-			    		@include button(transparent, #fff, 1.1em);
-			    		border: 2px solid #fff;
+					li {
+						display: inline-block;
+				    	.primary-action {
+				    		@include button(transparent, #fff, 1.1em);
+				    		border: 2px solid #fff;
 
-			    		&:hover {
-			    			background: rgba(0,0,0,0.1);
-			    		}
-			    	}
+				    		&:hover {
+				    			background: rgba(0,0,0,0.1);
+				    		}
+				    	}
 
-			    	.slack-button {
-			    		@include transition();
-			    		display: inline-block;
-			    		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-			    		margin-left: 20px;
+				    	.slack-button {
+				    		@include transition();
+				    		display: inline-block;
+				    		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+				    		margin-left: 20px;
 
-			    		&:hover {
-    						box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
-    					}
-			    	}
+				    		&:hover {
+	    						box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+	    					}
+				    	}
+				    }
 			    }
 		    }
 		}
@@ -328,6 +331,16 @@ body {
 	}
 }
 
+@media screen and (max-width: 850px) {
+	body {
+		#body-wrapper {
+			.inner-wrapper {
+				padding-top: 100px;
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 768px) {
 	body {
 		#splash {
@@ -346,3 +359,51 @@ body {
 	}
 }
 
+@media screen and (max-width: 621px) {
+	body {
+		#body-wrapper {
+			.inner-wrapper {
+				padding-top: 50px;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 440px) {
+	body {
+		#splash {
+			width: 100%;
+			height: 500px;
+
+			#fg {
+				.overlay {
+					.wrapper {
+						padding-top: 110px;
+						h1 {
+							line-height: 1.5em;
+							width: 90%;
+							font-size: 18px;
+						}
+
+						li {
+							display: block;
+							text-align: center;
+							margin-bottom: 10px;
+
+							a.primary-action {
+								width: 139px;
+							}
+
+							a.slack-button {
+								margin-left: 0;
+
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

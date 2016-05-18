@@ -5,10 +5,12 @@ var Message = React.createClass({
 	},
 	render: function() {
 	    return(
-	    	<div className="message" key={this.props.key}>
-	    		<div className="user-icon">
-	    			<img src={this.props.icon} />
-	    		</div>
+	    	<div className="message clearfix" key={this.props.key}>
+	    		<div className="user-icon-container">
+		    		<div className="user-icon">
+		    			<img src={this.props.icon} />
+		    		</div>
+		    	</div>
 	    		<div className="body">
 	    			<div className="username">{this.props.username}</div>
 	    			<div className="text">{this.props.body}</div>
